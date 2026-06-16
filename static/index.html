@@ -382,15 +382,15 @@
       const vipWrap = document.getElementById('r-vip-wrap');
       if (data.tipo_cliente === 'vip') {
         document.getElementById('r-bonus-vip').textContent = brl(data.bonus_vip);
-        vipWrap.style.display = '';
+        vipWrap.style.display = 'block';
       } else {
         vipWrap.style.display = 'none';
       }
 
       const dobroBadge = document.getElementById('r-dobro-badge');
-      dobroBadge.style.display = data.dobro_aplicado ? '' : 'none';
+      dobroBadge.style.display = data.dobro_aplicado ? 'inline-block' : 'none';
 
-      document.getElementById('resultado').style.display = '';
+      document.getElementById('resultado').style.display = 'block';
       document.getElementById('resultado').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
       toast('✅ Cálculo concluído! Carregando histórico...');
@@ -413,7 +413,7 @@
 
       if (!data.historico || data.historico.length === 0) return;
 
-      document.getElementById('historico-wrap').style.display = '';
+      document.getElementById('historico-wrap').style.display = 'block';
       document.getElementById('hist-count').textContent = data.total + ' registro(s)';
 
       data.historico.forEach((r, i) => {

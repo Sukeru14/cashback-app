@@ -1,15 +1,3 @@
-"""
-Backend Flask — Calculadora de Cashback
-=========================================
-Banco de dados: PostgreSQL (via variável de ambiente DATABASE_URL)
-
-Local: defina DATABASE_URL no seu .env ou exporte no terminal:
-  export DATABASE_URL="postgresql://usuario:senha@localhost:5432/cashback_db"
-
-Render/Railway/Heroku: a variável DATABASE_URL é injetada automaticamente
-quando você conecta um banco PostgreSQL ao serviço.
-"""
-
 import os
 import logging
 import psycopg2
