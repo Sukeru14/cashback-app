@@ -85,6 +85,28 @@ def index():
     return send_from_directory("static", "index.html")
 
 
+@app.route("/api/reset-tabela-temp", methods=["GET"])
+def reset_tabela_temp():
+    """
+    ROTA TEMPORÁRIA — usar uma única vez para migrar a tabela 'consultas'
+    da estrutura antiga (valor_produto, percentual_cupom) para a nova
+    (valor_compra, desconto_percentual, desconto_valor).
+ 
+    REMOVER esta rota e o arquivo app.py atualizado depois de usar uma vez,
+    para não deixar uma rota destrutiva exposta publicamente.
+    """
+    try:
+        with get_db() as conn:
+            with conn.cursor() as cur:
+                cur.execute("DROP TABLE IF EXISTS consultas")
+            conn.commit()
+        init_db()
+        return jsonify({"status": "Tabela recriada com sucesso com a nova estrutura."})
+    except Exception as e:
+        logging.exception("Erro ao resetar tabela")
+        return jsonify({"erro": str(e)}), 500
+
+
 @app.route("/api/calcular", methods=["POST"])
 def api_calcular():
     try:
