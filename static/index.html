@@ -27,19 +27,16 @@
       min-height: 100vh;
     }
 
-    /* ── Header ── */
     header {
-      background: linear-gradient(135deg, var(--azul) 0%, #2563EB 100%);
+      background: var(--azul);
       color: var(--branco);
       padding: 28px 24px 24px;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(26,60,107,0.35);
+      box-shadow: 0 4px 20px rgba(26,60,107,0.25);
     }
-    header .logo { font-size: 2rem; margin-bottom: 4px; }
     header h1 { font-size: 1.55rem; font-weight: 700; letter-spacing: -0.3px; }
     header p { font-size: 0.9rem; opacity: 0.8; margin-top: 4px; }
 
-    /* ── Layout ── */
     main {
       max-width: 860px;
       margin: 32px auto;
@@ -49,10 +46,9 @@
       gap: 24px;
     }
 
-    /* ── Card ── */
     .card {
       background: var(--branco);
-      border-radius: 16px;
+      border-radius: 12px;
       padding: 28px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.07);
       border: 1px solid var(--borda);
@@ -62,13 +58,8 @@
       font-weight: 700;
       color: var(--azul);
       margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
-    .card-title .icon { font-size: 1.2rem; }
 
-    /* ── Formulário ── */
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -79,9 +70,9 @@
     .field { display: flex; flex-direction: column; gap: 6px; }
     .field label { font-size: 0.82rem; font-weight: 600; color: var(--cinza); text-transform: uppercase; letter-spacing: 0.4px; }
 
-    select, input[type="number"], input[type="range"] {
+    select, input[type="number"] {
       border: 1.5px solid var(--borda);
-      border-radius: 8px;
+      border-radius: 6px;
       padding: 10px 12px;
       font-size: 1rem;
       color: #1E293B;
@@ -92,60 +83,43 @@
     }
     select:focus, input[type="number"]:focus { border-color: var(--azul-medio); background: var(--branco); }
 
-    .range-row { display: flex; align-items: center; gap: 10px; }
-    .range-row input[type="range"] { flex: 1; accent-color: var(--azul-medio); padding: 0; }
-    .range-badge {
-      background: var(--azul);
-      color: var(--branco);
-      border-radius: 6px;
-      padding: 4px 10px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      min-width: 52px;
-      text-align: center;
-    }
-
     .btn-calcular {
       margin-top: 20px;
       width: 100%;
-      padding: 14px;
-      background: linear-gradient(135deg, var(--azul) 0%, var(--azul-medio) 100%);
+      padding: 13px;
+      background: var(--azul);
       color: var(--branco);
       border: none;
-      border-radius: 10px;
-      font-size: 1.05rem;
-      font-weight: 700;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
       cursor: pointer;
-      letter-spacing: 0.3px;
-      transition: opacity .2s, transform .1s;
-      box-shadow: 0 4px 14px rgba(37,99,235,0.3);
+      transition: background .2s;
     }
-    .btn-calcular:hover { opacity: 0.92; }
-    .btn-calcular:active { transform: scale(0.99); }
+    .btn-calcular:hover { background: #15305A; }
     .btn-calcular:disabled { opacity: 0.6; cursor: default; }
 
-    /* ── Resultado ── */
     #resultado { display: none; }
 
     .resultado-hero {
       text-align: center;
-      background: linear-gradient(135deg, #F0FDF4 0%, #D1FAE5 100%);
-      border: 2px solid #6EE7B7;
-      border-radius: 14px;
-      padding: 28px 20px;
+      background: var(--verde-claro);
+      border: 1px solid #A7E3B8;
+      border-radius: 10px;
+      padding: 24px 20px;
       margin-bottom: 20px;
     }
     .resultado-hero .label { font-size: 0.85rem; color: var(--cinza); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-    .resultado-hero .valor { font-size: 2.8rem; font-weight: 800; color: var(--verde); line-height: 1.1; }
+    .resultado-hero .valor { font-size: 2.5rem; font-weight: 700; color: var(--verde); line-height: 1.1; }
     .resultado-hero .badge-dobro {
       display: inline-block;
       background: #FEF3C7;
-      border: 1.5px solid #F59E0B;
+      border: 1px solid #F2C84B;
       color: #92400E;
-      border-radius: 20px;
-      padding: 4px 14px;
-      font-size: 0.8rem;
-      font-weight: 700;
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
       margin-top: 10px;
     }
 
@@ -158,14 +132,13 @@
 
     .detalhe-item {
       background: var(--cinza-claro);
-      border-radius: 10px;
+      border-radius: 8px;
       padding: 12px 14px;
       border-left: 3px solid var(--azul-medio);
     }
     .detalhe-item .d-label { font-size: 0.75rem; color: var(--cinza); text-transform: uppercase; letter-spacing: 0.4px; font-weight: 600; }
     .detalhe-item .d-valor { font-size: 1.05rem; font-weight: 700; color: #1E293B; margin-top: 2px; }
 
-    /* ── Histórico ── */
     #historico-wrap { display: none; }
 
     .hist-header {
@@ -177,27 +150,25 @@
     .hist-count {
       background: var(--azul-claro);
       color: var(--azul);
-      border-radius: 20px;
-      padding: 3px 12px;
+      border-radius: 6px;
+      padding: 3px 10px;
       font-size: 0.8rem;
-      font-weight: 700;
+      font-weight: 600;
     }
 
     table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
     thead tr { background: var(--azul); color: var(--branco); }
     thead th { padding: 10px 12px; text-align: left; font-weight: 600; white-space: nowrap; }
     tbody tr:nth-child(even) { background: var(--cinza-claro); }
-    tbody tr:hover { background: var(--azul-claro); }
     tbody td { padding: 9px 12px; border-bottom: 1px solid var(--borda); }
-    .tag-vip { background: #EDE9FE; color: #6D28D9; border-radius: 4px; padding: 2px 8px; font-weight: 700; font-size: 0.75rem; }
-    .tag-reg { background: #E0F2FE; color: #0369A1; border-radius: 4px; padding: 2px 8px; font-weight: 700; font-size: 0.75rem; }
+    .tag-vip { background: #EDE9FE; color: #6D28D9; border-radius: 4px; padding: 2px 8px; font-weight: 600; font-size: 0.75rem; }
+    .tag-reg { background: #E0F2FE; color: #0369A1; border-radius: 4px; padding: 2px 8px; font-weight: 600; font-size: 0.75rem; }
     .tag-dobro { background: #FEF3C7; color: #92400E; border-radius: 4px; padding: 2px 6px; font-size: 0.72rem; }
 
-    /* ── Toast ── */
     #toast {
       position: fixed; bottom: 24px; right: 24px;
       background: #1E293B; color: var(--branco);
-      padding: 12px 20px; border-radius: 10px;
+      padding: 12px 20px; border-radius: 8px;
       font-size: 0.9rem; font-weight: 500;
       box-shadow: 0 8px 24px rgba(0,0,0,0.25);
       opacity: 0; transform: translateY(10px);
@@ -207,76 +178,68 @@
     #toast.show { opacity: 1; transform: translateY(0); }
 
     .vip-badge {
-      display: inline-flex; align-items: center; gap: 4px;
-      background: linear-gradient(135deg,#7C3AED,#A855F7);
-      color:#fff; border-radius:6px; padding:2px 10px;
-      font-size:0.75rem; font-weight:700; margin-left:8px;
+      display: inline-block;
+      background: #6D28D9;
+      color: #fff; border-radius: 4px; padding: 2px 8px;
+      font-size: 0.72rem; font-weight: 600; margin-left: 8px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">💳</div>
   <h1>Calculadora de Cashback</h1>
-  <p>Programa de fidelidade — calcule seu cashback em segundos</p>
+  <p>Programa de fidelidade — calcule o cashback de uma compra</p>
 </header>
 
 <main>
 
-  <!-- ── Formulário ── -->
   <div class="card">
-    <div class="card-title"><span class="icon">🧮</span> Nova Consulta</div>
+    <div class="card-title">Nova Consulta</div>
 
     <div class="form-grid">
       <div class="field">
         <label>Tipo de Cliente</label>
         <select id="tipo_cliente">
-          <option value="regular">👤  Regular</option>
-          <option value="vip">⭐  VIP — bônus de 10% extra</option>
+          <option value="regular">Regular</option>
+          <option value="vip">VIP</option>
         </select>
       </div>
 
       <div class="field">
-        <label>Valor do Produto (R$)</label>
-        <input type="number" id="valor_produto" min="0.01" step="0.01"
+        <label>Valor da Compra (R$)</label>
+        <input type="number" id="valor_compra" min="0.01" step="0.01"
                placeholder="Ex: 600,00" value="600" />
       </div>
 
       <div class="field" style="grid-column: 1 / -1;">
-        <label>Cupom de Desconto</label>
-        <div class="range-row">
-          <input type="range" id="cupom_range" min="0" max="90" step="5" value="0"
-                 oninput="syncCupom(this.value)" />
-          <div class="range-badge" id="cupom_badge">0%</div>
-        </div>
-        <input type="number" id="cupom_input" min="0" max="90" step="1" value="0"
-               placeholder="% de desconto" oninput="syncCupomInput(this.value)" style="margin-top:6px;" />
+        <label>Desconto (%)</label>
+        <input type="number" id="desconto_percentual" min="0" max="99" step="1"
+               placeholder="Ex: 20" value="0" />
       </div>
     </div>
 
     <button class="btn-calcular" id="btn" onclick="calcular()">
-      ⚡ Calcular Cashback
+      Calcular Cashback
     </button>
   </div>
 
-  <!-- ── Resultado ── -->
   <div class="card" id="resultado">
-    <div class="card-title"><span class="icon">✅</span> Resultado</div>
+    <div class="card-title">Resultado</div>
 
     <div class="resultado-hero">
       <div class="label">Cashback a receber</div>
       <div class="valor" id="r-cashback-final">—</div>
-      <div id="r-dobro-badge" class="badge-dobro" style="display:none;">⚡ Dobro aplicado (compra acima de R$ 500)</div>
+      <div id="r-dobro-badge" class="badge-dobro" style="display:none;">Dobro aplicado (compra acima de R$ 500)</div>
     </div>
 
     <div class="detalhe-grid">
       <div class="detalhe-item">
         <div class="d-label">Valor original</div>
-        <div class="d-valor" id="r-valor-produto">—</div>
+        <div class="d-valor" id="r-valor-compra">—</div>
       </div>
       <div class="detalhe-item">
-        <div class="d-label">Desconto (cupom)</div>
+        <div class="d-label">Desconto</div>
         <div class="d-valor" id="r-desconto">—</div>
       </div>
       <div class="detalhe-item">
@@ -288,7 +251,7 @@
         <div class="d-valor" id="r-cashback-base">—</div>
       </div>
       <div class="detalhe-item" id="r-vip-wrap">
-        <div class="d-label">Bônus VIP <span class="vip-badge">⭐ VIP</span></div>
+        <div class="d-label">Bônus VIP <span class="vip-badge">VIP</span></div>
         <div class="d-valor" id="r-bonus-vip">—</div>
       </div>
       <div class="detalhe-item">
@@ -298,10 +261,9 @@
     </div>
   </div>
 
-  <!-- ── Histórico ── -->
   <div class="card" id="historico-wrap">
     <div class="hist-header">
-      <div class="card-title" style="margin:0;"><span class="icon">📋</span> Histórico de Consultas</div>
+      <div class="card-title" style="margin:0;">Histórico de Consultas</div>
       <span class="hist-count" id="hist-count">0 registros</span>
     </div>
     <div style="overflow-x:auto;">
@@ -310,8 +272,8 @@
           <tr>
             <th>#</th>
             <th>Cliente</th>
-            <th>Produto</th>
-            <th>Cupom</th>
+            <th>Compra</th>
+            <th>Desconto</th>
             <th>Valor Final</th>
             <th>Cashback Final</th>
             <th>Dobro</th>
@@ -328,20 +290,10 @@
 <div id="toast"></div>
 
 <script>
-  const API = '';  // mesmo domínio
+  const API = '';
 
   function brl(v) { return 'R$ ' + parseFloat(v).toFixed(2).replace('.', ','); }
-  function pct(v) { return (parseFloat(v)*100).toFixed(0) + '%'; }
-
-  function syncCupom(v) {
-    document.getElementById('cupom_badge').textContent = v + '%';
-    document.getElementById('cupom_input').value = v;
-  }
-  function syncCupomInput(v) {
-    const n = Math.min(90, Math.max(0, parseInt(v) || 0));
-    document.getElementById('cupom_range').value = n;
-    document.getElementById('cupom_badge').textContent = n + '%';
-  }
+  function pct(v) { return parseFloat(v).toFixed(0) + '%'; }
 
   function toast(msg, ms = 3000) {
     const el = document.getElementById('toast');
@@ -354,27 +306,26 @@
     const btn = document.getElementById('btn');
     btn.disabled = true; btn.textContent = 'Calculando...';
 
-    const tipo_cliente  = document.getElementById('tipo_cliente').value;
-    const valor_produto = parseFloat(document.getElementById('valor_produto').value);
-    const pct_cupom     = parseInt(document.getElementById('cupom_input').value) || 0;
+    const tipo_cliente        = document.getElementById('tipo_cliente').value;
+    const valor_compra        = parseFloat(document.getElementById('valor_compra').value);
+    const desconto_percentual = parseFloat(document.getElementById('desconto_percentual').value) || 0;
 
-    if (!valor_produto || valor_produto <= 0) {
-      toast('⚠️ Informe um valor válido para o produto.'); btn.disabled = false; btn.textContent = '⚡ Calcular Cashback'; return;
+    if (!valor_compra || valor_compra <= 0) {
+      toast('Informe um valor válido para a compra.'); btn.disabled = false; btn.textContent = 'Calcular Cashback'; return;
     }
 
     try {
       const res = await fetch(API + '/api/calcular', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ tipo_cliente, valor_produto, percentual_cupom: pct_cupom / 100 })
+        body: JSON.stringify({ tipo_cliente, valor_compra, desconto_percentual })
       });
       const data = await res.json();
-      if (data.erro) { toast('❌ ' + data.erro); return; }
+      if (data.erro) { toast(data.erro); return; }
 
-      // Preencher resultado
       document.getElementById('r-cashback-final').textContent = brl(data.cashback_final);
-      document.getElementById('r-valor-produto').textContent  = brl(data.valor_produto);
-      document.getElementById('r-desconto').textContent       = '- ' + brl(data.desconto_cupom);
+      document.getElementById('r-valor-compra').textContent   = brl(data.valor_compra);
+      document.getElementById('r-desconto').textContent       = '- ' + brl(data.desconto_valor);
       document.getElementById('r-valor-final').textContent    = brl(data.valor_final);
       document.getElementById('r-cashback-base').textContent  = brl(data.cashback_base);
       document.getElementById('r-pre-dobro').textContent      = brl(data.cashback_pre_dobro);
@@ -393,14 +344,14 @@
       document.getElementById('resultado').style.display = 'block';
       document.getElementById('resultado').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-      toast('✅ Cálculo concluído! Carregando histórico...');
+      toast('Cálculo concluído.');
       await carregarHistorico();
 
     } catch(e) {
-      toast('❌ Erro de comunicação com o servidor.');
+      toast('Erro de comunicação com o servidor.');
       console.error(e);
     } finally {
-      btn.disabled = false; btn.textContent = '⚡ Calcular Cashback';
+      btn.disabled = false; btn.textContent = 'Calcular Cashback';
     }
   }
 
@@ -422,12 +373,12 @@
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td>${data.total - i}</td>
-          <td>${isVip ? '<span class="tag-vip">⭐ VIP</span>' : '<span class="tag-reg">👤 Regular</span>'}</td>
-          <td>${brl(r.valor_produto)}</td>
-          <td>${pct(r.percentual_cupom)}</td>
+          <td>${isVip ? '<span class="tag-vip">VIP</span>' : '<span class="tag-reg">Regular</span>'}</td>
+          <td>${brl(r.valor_compra)}</td>
+          <td>${pct(r.desconto_percentual)}</td>
           <td>${brl(r.valor_final)}</td>
           <td><strong>${brl(r.cashback_final)}</strong></td>
-          <td>${r.dobro_aplicado ? '<span class="tag-dobro">⚡ x2</span>' : '—'}</td>
+          <td>${r.dobro_aplicado ? '<span class="tag-dobro">x2</span>' : '—'}</td>
           <td style="font-size:0.8rem;color:#6B7280;">${dt}</td>
         `;
         tbody.appendChild(tr);
@@ -437,7 +388,6 @@
     }
   }
 
-  // Carrega histórico ao abrir
   carregarHistorico();
 </script>
 
